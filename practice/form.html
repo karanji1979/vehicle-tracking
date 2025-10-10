@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Entry Form</title>
+  <link rel="stylesheet" href="FORM.CSS">
+</head>
+<body>
+
+  <div class="form-container">
+    <form id="vehicleForm">
+
+      <!-- Vehicle Number (with datalist autocomplete) -->
+     <label for="vehicleNo">Vehicle No:</label>
+<input list="vehicleList" id="vehicleNo" name="vehicleNo" placeholder="Search vehicle no..." required>
+<datalist id="vehicleList">
+  <!-- Options will be inserted dynamically via JS -->
+</datalist>
+
+
+
+      <!-- From Unit -->
+      <label for="fromUnitInput">From Unit:</label>
+        <input list="fromUnitList" id="fromUnitInput" name="fromUnit" placeholder="Search From Unit..." required>
+        <datalist id="fromUnitList">
+        <option value="Plant">
+        <option value="Nadausi">
+        <option value="Kichha">
+        <option value="Moradabad">
+        <option value="SPN">
+        <option value="Quila">
+      </datalist>
+
+
+      <!-- To Unit -->
+    <label for="toUnitInput">To Unit:</label>
+      <input list="toUnitList" id="toUnitInput" name="toUnit" placeholder="Search To Unit..." required>
+      <datalist id="toUnitList">
+      <option value="Plant">
+      <option value="Nadausi">
+      <option value="Kichha">
+      <option value="Moradabad">
+      <option value="SPN">
+      <option value="Quila">
+      </datalist>
+
+
+      <!-- Vehicle Type -->
+      <label for="vehicleTypeInput">Vehicle Type:</label>
+      <input list="vehicleTypeList" id="vehicleTypeInput" name="vehicleType" placeholder="Search Vehicle Type..." required>
+      <datalist id="vehicleTypeList">
+      <option value="Fills Boga">
+      <option value="Khali Boga">
+      <option value="Pallets Boga">
+      <option value="Dana Boga">
+      <option value="RGB Boga">
+      <option value="Others">
+      </datalist>
+
+
+      <!-- Vehicle Status (Radio Buttons) -->
+     <label for="vehicleStatus">In-Out Status:</label>
+      <input list="statusList" id="vehicleStatus" name="vehicleStatus" placeholder="Select or type status..." required>
+      <datalist id="statusList">
+      <option value="In">
+      <option value="Out">
+      </datalist>
+
+
+      <!-- Password -->
+<<form onsubmit="return validatePassword()">
+  <!-- Password -->
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" placeholder="Enter Password" required>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+  // Allowed passwords list
+  const validPasswords = ["karan@321", "raj@123", "simran@789"];
+
+  function validatePassword() {
+    const enteredPassword = document.getElementById("password").value;
+
+    // Check if entered password matches any in the list
+    if (validPasswords.includes(enteredPassword)) {
+      return true; // Allow form submission
+    } else {
+      alert("Invalid password! Please try again.");
+      return false; // Stop form submission
+    }
+  }
+</script>
+
+    </form>
+  </div>
+
+  <!-- JS File -->
+  <script src="FORM.JS"></script>
+
+</body>
+</html>
